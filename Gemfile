@@ -5,6 +5,7 @@ ruby '2.0.0'
 gem 'data_mapper'
 gem 'dm-postgres-adapter'
 gem 'sinatra'
+gem 'rack-flash3'
 
 group :development, :test do
 	gem 'capybara'

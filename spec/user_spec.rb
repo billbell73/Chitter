@@ -25,9 +25,14 @@ describe User do
 		expect(user).to respond_to :email
 	end
 
+	#Not sure how to test validating password in rspec tests!
 	it 'validates password' do
-		expect(user).to respond_to :password
+		expect(user).to respond_to :password_digest
 	end
+
+	it 'has peeps' do
+    expect(user).to respond_to :peeps
+  end
 
 
 end

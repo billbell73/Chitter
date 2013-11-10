@@ -28,5 +28,9 @@ describe Peep do
 	it 'knows when it was posted' do
 		expect(peep).to respond_to :created_at
 	end
+
+	it 'belongs to a user' do
+		expect(peep).to respond_to :user
+	end
 	
 end

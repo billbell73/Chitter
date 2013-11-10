@@ -9,10 +9,12 @@ class User
 
 	property :id, Serial
 	property :name, String
-	property :username, String, :unique => true#, :message => "That username is already taken"
-	property :email, String, :unique => true#, ;message => "That email address is alreay registered"
+	property :username, String, :unique => true, :message => "That username is already taken"
+	property :email, String, :unique => true, :message => "That email address is already registered"
 
 	property :password_digest, Text
+
+	has n, :peeps, through: Resource
 
   def password=(password)
   	@password = password
@@ -20,5 +22,14 @@ class User
   end
 
   validates_confirmation_of :password
+
+  def self.authenticate(username, password)
+	  user = first(:username => username)
+	  if user && BCrypt::Password.new(user.password_digest) == password
+	    user
+	  else
+	    nil
+	  end
+	end
 
 end

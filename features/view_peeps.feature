@@ -1,9 +1,7 @@
 Feature: Viewing peeps
-
-In order to be able to be able to view posted peeps
-As a site visitor
-I should be able to see them
-And they should be displayed in chronological order
+In order to see what people have to say 
+as a maker 
+I want to see all peeps in chronological order
 
 Scenario: Viewing content of peep
 	Given the posting of a peep with content "Awful weather!"
@@ -15,3 +13,9 @@ Scenario: Chronological order of peeps
 	And the posting of a peep with content "Awful weather!" 5 minutes ago
 	When I am on the homepage
 	Then first I should see "Awful weather!" followed by "Dreadful!"
+
+Scenario: Peeps appear with name and username of peeper
+	Given the posting by user "billbell73" with email address "willbell@gmail.com" of a peep with content "Terrible weather!" 
+	When I am on the homepage
+	Then I should see "billbell73"
+	And I should see "willbell@gmail.com"
