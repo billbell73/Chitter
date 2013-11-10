@@ -20,5 +20,13 @@ describe Peep do
 	it 'has \'content\'' do
 		expect(peep).to respond_to :content
 	end
+
+	it 'can set time posted' do
+		expect(peep).to respond_to :created_at=
+	end
+
+	it 'knows when it was posted' do
+		expect(peep).to respond_to :created_at
+	end
 	
 end
