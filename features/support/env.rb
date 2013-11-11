@@ -1,13 +1,15 @@
 ENV['RACK_ENV'] = 'test'
 
-require File.join(File.dirname(__FILE__), '..', '..', 'lib/chitter.rb')
+# require File.join(File.dirname(__FILE__), '..', '..', 'lib/controllers-web/chitter.rb')
+require File.join(File.dirname(__FILE__), '..', '..', 'lib/server.rb')
+
 
 require 'database_cleaner'
 require 'capybara'
 require 'capybara/cucumber'
 require 'rspec'
 
-Capybara.app = Chitter
+Capybara.app = Sinatra::Application
 
 DatabaseCleaner.strategy = :truncation
 

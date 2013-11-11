@@ -1,10 +1,14 @@
+require 'sinatra'
+require 'data_mapper'
+require 'sinatra/base'
+require 'rack-flash'
 require 'data_mapper'
 
-env = ENV["RACK_ENV"] || "development"
-DataMapper.setup(:default, "postgres://localhost/bookmark_manager_#{env}")
+require_relative 'model-domain/peep'
+require_relative 'model-domain/user'
+#require_relative 'helpers/application'
+require_relative 'data_mapper_setup'
 
-require_relative 'peep'
-require_relative 'user'
+require_relative 'controllers-web/login'
 
-DataMapper.finalize
-DataMapper.auto_upgrade!
+require_relative 'controllers-web/chitter'

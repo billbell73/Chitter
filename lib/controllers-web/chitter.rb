@@ -1,11 +1,7 @@
-require 'data_mapper'
-require 'sinatra/base'
-require 'rack-flash'
+require_relative '../server'
 
-require_relative 'server'
-
-class Chitter < Sinatra::Base
-	set :views, File.join(File.dirname(__FILE__), '..', 'views')
+# class Chitter < Sinatra::Base
+	# set :views, File.join(File.dirname(__FILE__), '..', '..', 'views')
 
 	enable :sessions
   set :session_secret, 'super secret'
@@ -39,21 +35,21 @@ class Chitter < Sinatra::Base
     end
   end
 
-  get '/login' do
-  	erb :login
-  end
+  # get '/login' do
+  # 	erb :login
+  # end
 
-  post '/login' do
-  	username, password = params[:username], params[:password]
-    user = User.authenticate(username, password)
-    if user
-      session[:user_id] = user.id
-      redirect to('/')
-    else
-      flash.now[:errors] = ["Your username or password is incorrect. Please try again"]
-      erb :login
-    end
-  end
+  # post '/login' do
+  # 	username, password = params[:username], params[:password]
+  #   user = User.authenticate(username, password)
+  #   if user
+  #     session[:user_id] = user.id
+  #     redirect to('/')
+  #   else
+  #     flash.now[:errors] = ["Your username or password is incorrect. Please try again"]
+  #     erb :login
+  #   end
+  # end
 
   get '/add_peep' do
     if session[:user_id]
@@ -79,5 +75,5 @@ class Chitter < Sinatra::Base
 
   end
 
-end
+# end
 
