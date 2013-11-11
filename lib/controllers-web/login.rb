@@ -1,4 +1,6 @@
-get '/login' do
+class Chitter < Sinatra::Base
+
+  get '/login' do
   	erb :login
   end
 
@@ -13,3 +15,4 @@ get '/login' do
       erb :login
     end
   end
+end

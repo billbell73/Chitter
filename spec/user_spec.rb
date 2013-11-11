@@ -1,5 +1,5 @@
 require 'data_mapper'
-require 'user'
+require 'model-domain/user'
 
 describe User do
 

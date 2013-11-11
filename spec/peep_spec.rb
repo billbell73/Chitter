@@ -1,5 +1,5 @@
 require 'data_mapper'
-require 'peep'
+require 'model-domain/peep'
 
 describe Peep do 
 
