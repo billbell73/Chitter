@@ -32,5 +32,21 @@ describe Peep do
 	it 'belongs to a user' do
 		expect(peep).to respond_to :user
 	end
+
+	it 'can set one child peep' do
+		expect(peep).to respond_to :peep=
+	end
+
+	it 'knows its child peep' do
+		expect(peep).to respond_to :peep
+	end
+
+	it 'can set a parent peep' do
+		expect(peep).to respond_to :parent_peep=
+	end 	
+
+	it 'knows its parent peep' do
+		expect(peep).to respond_to :parent_peep
+	end
 	
 end

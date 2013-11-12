@@ -2,15 +2,31 @@
 <% @peeps.each do |peep| %>
   <li>
     <article>
-    <header>
-      <h1></h1>
-    </header>
-    <p><%= peep.content %></p>
-    <aside>
-      <ul>
-          <%= "peeped by " + peep.user.name + ", a.k.a " + peep.user.username %>
-      </ul>
-    </aside>
+      <header>
+        <h1></h1>
+      </header>
+      <% unless peep.parent_peep %>
+        <p><%= peep.content %></p>
+        <aside>
+          <ul>
+              <%= "peeped by " + peep.user.name + ", a.k.a " + peep.user.username %>
+          </ul>
+        </aside>
+      
+      <a href=<%='/reply?id=' + peep.id.to_s%>>reply</a>
+      <%end%>
+
+      <% if peep.peep %>
+
+      <% parent_peep = peep %>
+      <% child_peep = parent_peep.peep %>
+
+      <%= "parent_peep_id = " + parent_peep.id.to_s  %>
+      <%= "parent_peep.peep id = " + parent_peep.peep.id.to_s %>
+      <%= "child_peep_id = " + child_peep.id.to_s %>
+
+      <% end %>
+
     </article>
   </li>
 <%end%>

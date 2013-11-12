@@ -12,6 +12,7 @@ require_relative 'controllers-web/login'
 require_relative 'controllers-web/sign_up'
 require_relative 'controllers-web/add_peep'
 require_relative 'controllers-web/application'
+require_relative 'controllers-web/reply'
 
 class Chitter < Sinatra::Base
 
