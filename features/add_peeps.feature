@@ -5,7 +5,7 @@ I want to post a message to chitter
 
 
 Background: 
-  Given I am logged in as "billbell73"
+  Given I am logged in with username "billbell73" and name "Will Bell"
   And I am on the homepage
 	
 Scenario: Adding peep when logged in

@@ -15,7 +15,7 @@ Scenario: Chronological order of peeps
 	Then first I should see "Awful weather!" followed by "Dreadful!"
 
 Scenario: Peeps appear with name and username of peeper
-	Given the posting by user "billbell73" with email address "willbell@gmail.com" of a peep with content "Terrible weather!" 
+	Given the posting by user "billbell73" with name "Will Bell" of a peep with content "Terrible weather!" 
 	When I am on the homepage
 	Then I should see "billbell73"
-	And I should see "willbell@gmail.com"
+	And I should see "Will Bell"

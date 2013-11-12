@@ -8,9 +8,7 @@
     <p><%= peep.content %></p>
     <aside>
       <ul>
-        <% if peep.user %>
-        <%= peep.user.username + '  ' + peep.user.email %>
-        <% end %>
+          <%= "peeped by " + peep.user.name + ", a.k.a " + peep.user.username %>
       </ul>
     </aside>
     </article>
